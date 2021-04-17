@@ -2,6 +2,7 @@
 
 import prompt
 import random
+from math import gcd
 
 
 def welcome_user():
@@ -73,3 +74,21 @@ def calc(name):
 
     print("Congratulations, " + name + "!")
 
+
+def gcd_calc(name):
+    print("Find the greatest common divisor of given numbers.")
+
+    for number in range(3):
+        first = random.randint(1,99)
+        second = random.randint(1,99)
+        result = gcd(first, second)
+        print ("Question:", first, second)
+        answer = prompt.string('Your answer: ')
+        if str(result) == answer:
+            print("Correct!")
+        else:
+            print("'" + answer +"' is wrong answer ;(. Correct answer was '" + str(result) + "'.")
+            print("Let's try again, " + name + "!")
+            return None
+        
+    print("Congratulations, " + name + "!")
