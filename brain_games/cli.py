@@ -127,4 +127,34 @@ def progression(name):
         ind += 1
 
     print("Congratulations, " + name + "!")
+
+
+def primer(name):
+    print("Answer \"yes\" if given number is prime. Otherwise answer \"no\".")
+
+    for number in range(3):
+        count = random.randint(1,99)
+        print("Question:", count)
+        answer = prompt.string('Your answer: ')
+
+        if isPrime(count) == True:
+            result = 'yes'
+        else:
+            result = 'no'
+
+        if result == answer:
+            print("Correct!")
+        else:
+            print("'" + answer +"' is wrong answer ;(. Correct answer was '" + result + "'.")
+            print("Let's try again, " + name + "!")
+            return None
         
+    print("Congratulations, " + name + "!")
+
+
+def isPrime(n):
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            return False
+        
+    return True
