@@ -92,3 +92,39 @@ def gcd_calc(name):
             return None
         
     print("Congratulations, " + name + "!")
+
+
+def progression(name):
+    print("What number is missing in the progression?")
+
+    ind = 0
+    while ind < 3:
+        count = random.randint(5,10)
+        differ = random.randint(1,25)
+        pos = random.randint(1,count) - 1
+        first = random.randint(1,99)
+        print ("Question: ", end='')
+
+        for number in range(count):
+            if number == pos:
+                print("..", end=' ')
+                result = first
+            else:
+                print(str(first), end=' ')
+            
+            first = first + differ
+
+        print('')
+        answer = prompt.string('Your answer: ')
+
+        if str(result) == answer:
+            print("Correct!")
+        else:
+            print("'" + answer +"' is wrong answer ;(. Correct answer was '" + str(result) + "'.")
+            print("Let's try again, " + name + "!")
+            return None
+
+        ind += 1
+
+    print("Congratulations, " + name + "!")
+        
